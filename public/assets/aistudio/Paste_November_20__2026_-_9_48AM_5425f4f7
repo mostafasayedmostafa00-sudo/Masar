@@ -1,0 +1,2541 @@
+# MASAR OS
+## Master Build Specification — Build From Scratch
+
+You are building a complete mobile-first personal operating system for learning, studying, productivity, fitness, reading, research, and personal development.
+
+The application name is:
+
+**Masar OS**
+
+Arabic name:
+
+**مَسَار OS**
+
+The application must feel like a premium personal **Mission Control / Personal Operating System**, not a basic study planner.
+
+---
+
+# 1. CORE OBJECTIVE
+
+Build the application completely from scratch.
+
+Do NOT treat this as a simple to-do list.
+
+Masar OS should answer:
+
+> “What should I do today, why should I do it, when should I do it, what should I study next, what am I behind on, and how am I progressing?”
+
+The app combines:
+
+- Study Planning
+- Course Management
+- Learning Science
+- Cybersecurity Learning
+- Activity / Labs
+- English Practice
+- Reading
+- Research
+- Fitness
+- Habits
+- Sleep Management
+- Personal Reflection
+- Roadmaps / Mind Maps
+- Analytics
+- Notifications
+- Focus Sessions
+- AI-assisted planning and review
+
+The application should be highly interactive and intelligently connected.
+
+---
+
+# 2. IMPORTANT DEVELOPMENT PRINCIPLE
+
+Build the application as a REAL working product.
+
+Do NOT create fake buttons, fake progress, fake screens, or static mockups.
+
+Every major interaction should actually work.
+
+If a feature cannot be fully implemented in the browser environment, implement the best working version possible and clearly isolate the limitation.
+
+Do not pretend a feature exists if it doesn't.
+
+---
+
+# 3. TECHNOLOGY / ARCHITECTURE
+
+Choose a modern, stable web stack suitable for Google AI Studio Build.
+
+Prefer:
+
+- React
+- TypeScript
+- Vite or the appropriate supported build system
+- Responsive CSS
+- IndexedDB/local storage for persistent local data
+- Service Worker / PWA support
+- Web APIs where appropriate
+- Framer Motion or an equivalent animation library
+- Recharts or another lightweight charting library
+- PDF.js for PDF reading
+- React Flow / @xyflow/react or D3 for roadmap visualization
+
+Do NOT over-engineer the project.
+
+Prioritize:
+
+1. Reliability
+2. Mobile usability
+3. Performance
+4. Maintainability
+5. Offline/local functionality
+6. Clean architecture
+
+---
+
+# 4. GITHUB + MOBILE INSTALLATION REQUIREMENT
+
+This is mandatory.
+
+The project must be structured so it can be:
+
+**Google AI Studio → GitHub → Deploy → Mobile Browser → Install as PWA**
+
+The application must include:
+
+- Production-ready build
+- PWA manifest
+- Service worker
+- App icons
+- Splash/loading experience where supported
+- Standalone display mode
+- Theme colors
+- Mobile viewport configuration
+- Safe-area support
+- Offline caching for the application shell
+- Proper routing that works after deployment
+- No dependence on localhost
+- No hard-coded development URLs
+
+The application should work when published to GitHub and deployed through a static hosting provider such as GitHub Pages or another compatible service.
+
+Make the routing/deployment architecture compatible with static hosting.
+
+If GitHub Pages requires a specific base path or configuration, configure the project correctly.
+
+Do NOT assume that the app only runs inside Google AI Studio.
+
+The final project must be exportable and maintainable as a normal GitHub project.
+
+---
+
+# 5. APPLICATION IDENTITY
+
+Application name:
+
+**Masar OS**
+
+Arabic:
+
+**مَسَار OS**
+
+Short description:
+
+> A personal operating system for learning, discipline, health, knowledge, and progress.
+
+The visual identity should be original.
+
+Do NOT use:
+
+- Rocket icons
+- Literal spaceships
+- Generic books
+- Generic brains
+- Generic graduation caps
+- Generic productivity checkmarks
+
+Instead create an abstract identity based around:
+
+- A path
+- Progress
+- Direction
+- Navigation
+- Knowledge
+- A central point
+- Movement from one state to another
+
+The icon should be a simple premium geometric symbol.
+
+Concept:
+
+**An abstract “M” / path / route symbol forming a directional progression.**
+
+Use a dark near-black background with a refined cyan/violet accent.
+
+The icon must remain recognizable at very small sizes.
+
+Generate all required PWA icon sizes/assets from the same visual identity.
+
+---
+
+# 6. UI / UX PHILOSOPHY
+
+You have freedom to design the UI.
+
+Do NOT simply copy a generic dashboard.
+
+Design it yourself using strong product/UI thinking.
+
+The visual direction should be:
+
+### Premium Mission Control
+
+Dark:
+
+- Near-black background
+- Glass panels
+- Hairline borders
+- Subtle gradients
+- Cyan/violet accents
+- Soft glow
+- Telemetry-inspired elements
+- Progress rings
+- Small status indicators
+- Sparklines
+- Animated counters
+- Elegant typography
+
+But avoid making it look like a literal spaceship cockpit.
+
+The interface should feel like:
+
+> “A personal command center for my life and learning.”
+
+Use animation carefully.
+
+Use:
+
+- Framer Motion
+- Micro-interactions
+- Smooth transitions
+- Progress animations
+- Expand/collapse
+- Bottom sheets
+- Haptic feedback where supported
+- Skeleton loading
+- Empty states
+- Toast notifications
+
+Support:
+
+- Dark mode
+- Light mode
+- System theme
+
+Respect:
+
+`prefers-reduced-motion`
+
+---
+
+# 7. MOBILE-FIRST REQUIREMENT
+
+This is primarily a PHONE APPLICATION.
+
+Design first for:
+
+- 360 × 800
+- 390 × 844
+- 430 × 932
+
+The 360px viewport must work.
+
+Requirements:
+
+- No horizontal scrolling
+- No desktop-first layout
+- No tiny buttons
+- Minimum touch target approximately 44px
+- Base text around 16px
+- Safe-area support
+- `100dvh`
+- `viewport-fit=cover`
+- Bottom navigation
+- Swipe gestures where useful
+- Bottom sheets for mobile interactions
+
+Desktop should be supported as a secondary layout.
+
+Desktop can use a centered max-width interface.
+
+---
+
+# 8. LANGUAGE
+
+Support:
+
+- Arabic
+- English
+
+There must be a global language switch.
+
+Arabic:
+
+- Full RTL
+- Correct alignment
+- Correct navigation direction
+- Correct icons where directional
+
+English:
+
+- Full LTR
+
+Do NOT merely translate labels.
+
+The entire layout must adapt to RTL/LTR.
+
+---
+
+# 9. MAIN NAVIGATION
+
+Primary navigation:
+
+1. Today
+2. Week
+3. Roadmap
+4. Library
+5. Stats
+
+Settings should be accessible from the header.
+
+---
+
+# 10. TODAY SCREEN
+
+Today is the main command center.
+
+Top-to-bottom structure should contain:
+
+### Mission Card
+
+Show:
+
+- Date
+- Day
+- Overall completion
+- Today's priority
+- Current mission
+- Short motivational/contextual statement
+
+### Sleep Guard
+
+Show:
+
+- Wake time
+- Target sleep
+- Bedtime
+- Screens-off time
+- Sleep status
+
+### Workout
+
+Show today's workout.
+
+### NTI
+
+Show today's NTI topics.
+
+### Extra
+
+Show today's extra-learning topic.
+
+### Activity
+
+Show today's practical activity.
+
+### Language
+
+Show today's language activity.
+
+### Habits
+
+Show daily habits.
+
+### Speaking Challenge
+
+Show today's English speaking task.
+
+### Wind-down
+
+Show evening screenless routine.
+
+Everything should be interactive.
+
+Tasks can be:
+
+- Complete
+- Skip
+- Start
+- Snooze
+- Review later
+
+---
+
+# 11. WEEKLY ROUTINE
+
+Default week:
+
+**Saturday → Friday**
+
+### Saturday
+Study
+
+### Sunday
+Study
+
+### Monday
+Study
+
+### Tuesday
+Study
+
+### Wednesday
+Travel / Off
+
+No normal study tasks.
+
+### Thursday
+Catch-up
+
+Automatically recover:
+
+- Wednesday tasks
+- Skipped tasks
+- Delayed tasks
+
+Then perform:
+
+- Weekly review
+- Next-week planning
+
+### Friday
+Travel / Off
+
+Optional:
+
+- Podcast
+- Book
+- Light activity
+
+Friday normally has no study workload.
+
+Allow per-date overrides.
+
+Example:
+
+Friday 20 November 2026 is initially overridden to:
+
+**Study — Light**
+
+The user must be able to change this.
+
+---
+
+# 12. DAILY TIME STRUCTURE
+
+Default:
+
+### 06:30
+Wake up
+
+### 06:35–07:15
+Workout
+
+### 07:15–07:30
+Shower + prepare + bag
+
+### 07:30
+Commute
+
+Commute can contain:
+
+- Books
+- Podcasts
+
+### Daytime
+NTI fixed schedule.
+
+Do NOT schedule normal learning tasks inside the NTI fixed block.
+
+### 17:00
+Home / meal / rest
+
+### Evening
+
+Default blocks:
+
+- NTI Topic — approximately 1.5h
+- Extra Topic — approximately 1.5h
+- Activity — approximately 1h
+- Language — approximately 1h
+
+Include approximately 10–15 minute breaks.
+
+Default sleep target:
+
+**23:30**
+
+Default wake:
+
+**06:30**
+
+These values must be editable.
+
+---
+
+# 13. IMPORTANT PLANNING PHILOSOPHY
+
+Time is NOT the primary objective.
+
+Topics are the primary objective.
+
+The app should NOT think:
+
+> “I must fill exactly 90 minutes.”
+
+Instead:
+
+> “I need to complete the planned learning topic.”
+
+Time estimates are approximate.
+
+The planner should prioritize:
+
+1. Topic completion
+2. Course progression
+3. Deadlines
+4. Consistency
+5. Time estimates
+
+---
+
+# 14. CONTENT MODEL
+
+Use this structure:
+
+Queue
+→ Course / Platform
+→ Topic
+→ Item
+
+Queues must remain logically separate.
+
+Do not mix unrelated learning systems.
+
+---
+
+# 15. NTI QUEUE
+
+Program:
+
+**Professional Security Administrator — S006**
+
+Technical Program:
+
+**294 hours**
+
+Courses in order:
+
+1. Python for Security — CURRENT
+2. Network Fundamentals
+3. Red Hat System Administration I
+4. Cisco EDR
+5. Cisco Ethical Hacker
+6. Cryptography
+7. Active Directory Security
+8. Network Security & Next Generation Cisco Firewall
+9. FortiGate Administrator
+10. FortiMail Administrator
+11. FortiWeb Administrator
+
+Certificate/voucher courses must support:
+
+- Exam target date
+- Revision period
+- Certification status
+- Voucher status
+
+Only one NTI course is CURRENT.
+
+When the current course finishes:
+
+Ask whether to move to the next course.
+
+---
+
+# 16. NTI CURRENT COURSE
+
+Current:
+
+**Python for Security**
+
+Start:
+
+**Saturday 21 November 2026**
+
+The system should allow:
+
+- Topics
+- Subtopics
+- Videos
+- PDFs
+- Labs
+- Practice
+- Estimated duration
+- Completion
+- Notes
+- Recall
+- Review dates
+
+---
+
+# 17. EXTRA QUEUE
+
+Order:
+
+1. RHCSA + Linux Security — CURRENT
+2. Cisco CyberOps Associate
+3. Kaspersky
+4. CCNP Security / SCOR
+5. MCSA + Identity & Access Management
+6. Network Security Monitoring / SIEM + Wireshark + Network Traffic Analysis
+7. Firewall Vendor Specialization
+8. AZ-700 Azure Network Engineer Associate
+9. Zero Trust
+10. Malware Analysis
+
+Only one Extra course should be CURRENT.
+
+Extra courses can be linked to an NTI course.
+
+Deadline can default to the linked NTI course's planned completion date but must be editable.
+
+---
+
+# 18. ACTIVITY QUEUE
+
+Order:
+
+1. TryHackMe — Cyber Security 101 — CURRENT
+2. TryHackMe — SOC Level 1
+3. CyberDefenders
+4. Hack The Box Academy
+5. CTFtime
+6. PortSwigger Web Security Academy
+7. LetsDefend
+
+Activity items:
+
+- Rooms
+- Labs
+- Modules
+- Challenges
+
+Each can contain:
+
+- Title
+- Estimated minutes
+- URL
+- Status
+- Notes
+- What I learned
+- What blocked me
+- Key command/technique
+
+CTFtime events should support date-based events and appear in Week view without forcing them into the daily queue.
+
+---
+
+# 19. LANGUAGE QUEUE
+
+Initially empty.
+
+The user will add an English course later.
+
+Use the same:
+
+Queue → Course → Topic → Item
+
+architecture.
+
+---
+
+# 20. COMMUTE QUEUE
+
+Books and podcasts.
+
+Books:
+
+- Title
+- Author
+- Pages
+- Current page
+- Daily target
+- Notes
+
+Podcasts:
+
+- Title
+- Duration
+- Source/link
+- Progress
+
+During commute, suggest appropriate content automatically.
+
+---
+
+# 21. NOVELS
+
+Create a dedicated novels queue.
+
+Order:
+
+1. المسخ — The Metamorphosis
+2. الغريب — The Stranger
+3. الأخوة كارامازوف — The Brothers Karamazov
+4. كائن لا تحتمل خفته — The Unbearable Lightness of Being
+5. الجريمة والعقاب — Crime and Punishment
+6. مستر ريبلي الموهوب — The Talented Mr. Ripley
+7. جامع الفراشات — The Collector
+8. الملك لير — King Lear
+9. ترنيمة عيد الميلاد — A Christmas Carol
+10. دون جوان — Don Juan
+11. عطيل — Othello
+12. صورة دوريان جراي — The Picture of Dorian Gray
+13. هاملت — Hamlet
+
+One current book at a time.
+
+Allow:
+
+- Reordering
+- Pages
+- Daily target
+- Page logging
+- Quotes
+- Ideas
+- Notes
+- Progress
+
+---
+
+# 22. READING
+
+Support reading from:
+
+- Commute
+- Screenless wind-down
+
+Track:
+
+- Pages
+- Time
+- Current page
+- Completion
+- Notes
+
+---
+
+# 23. PDF READER
+
+Create:
+
+**Library → PDFs**
+
+The user should be able to upload PDFs from the phone.
+
+Store PDFs locally using IndexedDB where practical.
+
+Use PDF.js/pdfjs-dist.
+
+Features:
+
+- Open PDF
+- Page navigation
+- Page input
+- Previous/Next
+- Zoom +
+- Zoom -
+- Pinch zoom
+- Fit to width
+- Last-read page
+- Continue reading
+- Text selection
+- Highlights
+- 3–4 highlight colors
+- Remove highlight
+- Highlights list
+- Jump to highlight
+- Persistent annotations
+
+When reopening:
+
+> Continue from page N
+
+Reading progress should be linked to the relevant Reading item.
+
+Must work at 360px width.
+
+---
+
+# 24. ROADMAP
+
+Create:
+
+**Roadmap**
+
+This is an interactive learning mind map.
+
+Structure:
+
+Queue
+↓
+Course
+↓
+Topic
+↓
+Item
+
+Use:
+
+- React Flow / @xyflow/react
+- or D3
+
+Features:
+
+- Pan
+- Pinch zoom
+- Double tap to fit
+- Minimap
+- Search
+- Center on node
+- Expand/collapse
+- Long press
+- Bottom sheet
+- Editable nodes
+- Prerequisites
+- Status
+- Progress
+
+Status visuals:
+
+Completed:
+Glow
+
+Current:
+Pulsing ring
+
+Upcoming:
+Dim
+
+Locked:
+Faded
+
+Course progress rings.
+
+Completed path should visually glow.
+
+Modes:
+
+- Today
+- All
+- Focus
+- Search
+
+Support export:
+
+- PNG
+- JSON
+
+---
+
+# 25. PLAN GENERATOR
+
+Generate:
+
+**Today**
+and
+**Week**
+
+Tasks can be:
+
+- Complete
+- Skip
+- Reschedule
+- Review later
+
+If a task is skipped:
+
+Automatically re-plan.
+
+If a Study day becomes Travel/Off:
+
+Move tasks to Catch-up.
+
+If the user falls behind:
+
+Show:
+
+**Ahead**
+**On Track**
+**Behind**
+
+Calculate:
+
+- Days left
+- Topics left
+- Topics/day
+- Completion rate
+
+Avoid splitting topics unnecessarily.
+
+---
+
+# 26. LEARNING ENGINE
+
+Create:
+
+**Library → Learn**
+
+Resources:
+
+1. The First 20 Hours — Josh Kaufman / TEDx
+2. Learning How to Learn — Barbara Oakley / TEDx
+3. How to Study for Exams — Ali Abdaal
+4. How to Learn Faster / Feynman Technique — Thomas Frank
+5. How to Learn Anything Faster Using Modern Research — Justin Sung
+
+---
+
+## First 20 Hours
+
+When a course becomes CURRENT:
+
+AI generates:
+
+- 3–5 key subskills
+- 2–3 best resources
+- Common barriers
+- 20-hour progress meter
+
+---
+
+## Active Recall
+
+Allow the user to:
+
+1. Hide notes
+2. Recall from memory
+3. Write or speak
+4. Reveal outline
+5. Identify missed points
+
+Missed points become review candidates.
+
+---
+
+## Studied vs Recalled
+
+Do NOT mark a topic as fully mastered simply because it was watched/read.
+
+Track:
+
+**Studied**
+
+and
+
+**Recalled**
+
+Recall target:
+
+approximately 10 minutes.
+
+---
+
+## Feynman Technique
+
+User explains the concept simply.
+
+AI analyzes:
+
+- Unclear sections
+- Jargon
+- Knowledge gaps
+- Score
+
+Knowledge gaps become revision items.
+
+---
+
+## Illusion of Mastery Guard
+
+Detect patterns such as:
+
+- Rewatching
+- Rereading
+- No recall
+- No explanation
+- Passive completion
+
+Warn the user:
+
+> “You consumed the material, but have not demonstrated recall yet.”
+
+---
+
+# 27. SLEEP GUARD
+
+Default:
+
+Wake:
+
+**06:30**
+
+Target sleep:
+
+**7 hours**
+
+Allowed target range:
+
+**6–9 hours**
+
+Calculate:
+
+Bedtime = Wake time − Target sleep
+
+Screens-off:
+
+Bedtime − 1 hour
+
+Last meal:
+
+Bedtime − 3 hours
+
+Last coffee:
+
+Bedtime − 10 hours
+
+Morning sunlight:
+
+15 minutes after waking
+
+Target:
+
+10–15 minutes
+
+The app should treat these as planning preferences/routines, not medical diagnoses.
+
+---
+
+## HARD PLANNER RULE
+
+Screen-based study blocks must finish before screens-off.
+
+Never sacrifice sleep to complete study tasks.
+
+If there is insufficient time:
+
+Trim by priority.
+
+Default priority:
+
+1. NTI
+2. Extra
+3. Activity
+4. Language
+
+Priority must be editable.
+
+Overflow should move to another available slot.
+
+---
+
+# 28. SCREENLESS WIND-DOWN
+
+After screens-off:
+
+Allow:
+
+- Paper-book reading
+- Speaking challenge
+- Hooponopono
+- Bedtime checklist
+- Reflection
+
+Do not require phone interaction.
+
+---
+
+# 29. SLEEP NOTIFICATIONS
+
+Support reminders for:
+
+- Coffee cutoff
+- Meal cutoff
+- Screens off
+- Bedtime
+- Morning sunlight
+
+Track:
+
+- Planned bedtime
+- Actual bedtime
+- Sleep adherence
+- Relationship between sleep and productivity
+
+Weekly AI review can generate sleep insights.
+
+---
+
+# 30. CAN'T SLEEP
+
+Provide:
+
+**20-minute timer**
+
+If the user cannot sleep:
+
+Suggest:
+
+> Get out of bed and return when sleepy.
+
+This should be presented as a routine suggestion, not medical treatment.
+
+---
+
+# 31. WORKOUT
+
+Bodyweight/home workout.
+
+Goals:
+
+- Posture
+- Back
+- Chest
+- Core
+- General fat reduction
+- Fitness
+
+Do NOT claim spot reduction of belly/side fat.
+
+Explain that overall fat loss is influenced by overall activity and nutrition.
+
+Morning:
+
+Approximately 40 minutes.
+
+Evening:
+
+Approximately 10-minute posture break.
+
+---
+
+# 32. WORKOUT A
+
+Chest + Core
+
+- Push-ups — 4×10–15
+- Decline push-ups — 3×8–12
+- Pike push-ups — 3×6–10
+- Diamond push-ups — 3×8–12
+- Plank — 3×40–60 sec
+- Bicycle crunch — 3×20
+- Leg raises — 3×12–15
+
+---
+
+# 33. WORKOUT B
+
+Back + Posture + Obliques
+
+- Backpack rows — 4×12–15
+- Superman — 4×12, 3 sec hold
+- Y-T-W — 3×8 each
+- Reverse snow angels — 3×12
+- Side plank — 3×30–45 sec
+- Dead bug — 3×10/side
+- Russian twists — 3×20
+
+---
+
+# 34. WORKOUT C
+
+Legs + Fat Burn + Abs
+
+- Squats — 4×20
+- Reverse lunges — 3×12/leg
+- Glute bridge — 3×15
+- Calf raises — 3×20
+- Mountain climbers — 3×30 sec
+- Jumping jacks — 3×40 sec
+- Flutter kicks — 3×30 sec
+- Shoulder taps — 3×20
+
+Cool-down:
+
+5 minutes.
+
+---
+
+# 35. WORKOUT FEATURES
+
+Each workout must support:
+
+- Checkbox per set
+- Reps
+- Weight if applicable
+- Rest timer
+- Plank timer
+- Progression
+- Weekly volume
+- Form tips
+- Notes
+
+Stop/warning message if pain occurs.
+
+Completing the workout automatically counts:
+
+**Resistance Training**
+
+---
+
+# 36. EVENING POSTURE
+
+Include:
+
+- Wall angels
+- Chin tucks
+- Doorway stretch
+- Cat-cow
+
+Travel/off:
+
+10-minute mobility.
+
+---
+
+# 37. HABITS
+
+Create:
+
+1. Water — 7 days
+2. Cut sugar — 14 days
+3. Sleep 8+ hours — 10 days
+4. Resistance training — 28–42 days
+5. Morning sunlight — 7 days
+6. Clean eating — 21 days
+7. Hooponopono — 21 days
+8. Fruits/vegetables — 21 days
+
+Each habit:
+
+- Daily tick
+- Completed days
+- Streak
+- Progress ring
+- Reminder
+- Typical results window
+
+Missing one day should NOT erase total completed days.
+
+---
+
+# 38. ENGLISH SPEAKING CHALLENGE
+
+Create a 30-day speaking challenge.
+
+Day 1:
+Introduce yourself
+
+Day 2:
+20 common words
+
+Day 3:
+Daily routine
+
+Day 4:
+Family
+
+Day 5:
+Hobbies
+
+Day 6:
+Home
+
+Day 7:
+Likes/dislikes
+
+Day 8:
+Best friend
+
+Day 9:
+Favorite food
+
+Day 10:
+Goal in life
+
+Day 11:
+School/college
+
+Day 12:
+Favorite movie
+
+Day 13:
+Memorable moment
+
+Day 14:
+Place you love
+
+Day 15:
+Strengths/weaknesses
+
+Day 16:
+Future plans
+
+Day 17:
+Ideal day
+
+Day 18:
+Book you like
+
+Day 19:
+Opinion topic
+
+Day 20:
+Social issue
+
+Day 21:
+Country to visit
+
+Day 22:
+Dream job
+
+Day 23:
+Time management
+
+Day 24:
+Inspiring person
+
+Day 25:
+Something learned recently
+
+Day 26:
+Recent event
+
+Day 27:
+Biggest challenge
+
+Day 28:
+Ideal life
+
+Day 29:
+5–7 minute conversation
+
+Day 30:
+Review / speak freely for 3–5 minutes
+
+Each day:
+
+- Topic
+- Instructions
+- Speaking timer
+- Optional voice recorder
+- Completion
+
+Use MediaRecorder where supported.
+
+Store recordings locally if possible.
+
+Missing a day does not reset the challenge.
+
+---
+
+# 39. RESEARCH
+
+Create:
+
+**Library → Research**
+
+Sources:
+
+- OpenAlex
+- BASE
+- ASJP
+- Aeon
+- Psyche
+- Internet Archive
+- منصة معنى
+- مجلة حكمة
+
+Sources should be editable.
+
+Research item:
+
+- Title
+- URL
+- Source
+- Tags
+- Notes
+- Status
+- Weekly goal
+
+---
+
+# 40. MIND COMPASS
+
+Create:
+
+**Library → Mind**
+
+This is a reflection tool, not therapy.
+
+Use philosophical frameworks.
+
+### Stoicism
+
+For:
+
+Mental exhaustion
+
+Practice:
+
+Control / Not Control
+
+---
+
+### Epicureanism
+
+For:
+
+Not appreciating what one has
+
+Practice:
+
+Name 3 simple things you appreciate.
+
+---
+
+### Pragmatism
+
+For:
+
+Overthinking
+
+Practice:
+
+Choose the smallest practical next step within 10 minutes.
+
+---
+
+### Confucianism
+
+For:
+
+Shallow relationships
+
+Practice:
+
+Send a thoughtful message or perform a meaningful act.
+
+---
+
+### Transcendentalism
+
+For:
+
+Feeling lost
+
+Practice:
+
+15 minutes without the phone + one written line.
+
+---
+
+Check-in:
+
+> What’s weighing on me?
+
+Options + free text.
+
+AI recommends the most appropriate reflection.
+
+Store:
+
+- Journal
+- History
+- Practices
+- Reflections
+
+Do not present this as mental-health diagnosis or therapy.
+
+---
+
+# 41. FOCUS TIMER
+
+Create a focus/Pomodoro system.
+
+Default:
+
+25 minutes work
+5 minutes break
+
+Allow customization.
+
+Focus session should be linkable to:
+
+- NTI
+- Extra
+- Activity
+- Language
+- Reading
+- Other
+
+Track actual time.
+
+Actual time contributes to analytics.
+
+---
+
+# 42. QUICK NOTES
+
+Every task should optionally support:
+
+- Quick note
+- What I learned
+- What blocked me
+- Key command
+- Key concept
+
+Notes must be searchable.
+
+---
+
+# 43. SPACED REVIEW
+
+Support:
+
+**Review later**
+
+Default:
+
+- +2 days
+- +7 days
+
+Allow customization.
+
+Revision tasks should appear automatically.
+
+---
+
+# 44. AI QUIZ
+
+After completing a topic:
+
+Generate a 5-question quiz.
+
+Support:
+
+- Multiple choice
+- Short answer where practical
+- Score
+- Weak areas
+- Revision recommendations
+
+Quiz results contribute to learning analytics.
+
+---
+
+# 45. ANALYTICS
+
+Create:
+
+**Stats**
+
+Show:
+
+- Topics completed
+- Planned vs actual minutes
+- Completion rate
+- Study streak
+- Best study hours
+- Delayed courses
+- Topics delayed
+- Recall rate
+- Quiz performance
+- Workout volume
+- Habit consistency
+- Sleep adherence
+- Reading progress
+
+Use clean responsive charts.
+
+---
+
+# 46. WEEKLY AI REVIEW
+
+At the end of the week:
+
+AI analyzes the user's actual data.
+
+Return JSON internally and render:
+
+### 3 Insights
+
+### 3 Suggestions
+
+Examples:
+
+- Where the user lost time
+- Which course is slowing down
+- Which study period is most productive
+- Whether sleep correlates with completion
+- Whether passive learning is too high
+- Whether activity practice is being neglected
+
+Do not invent conclusions without enough data.
+
+---
+
+# 47. NOTIFICATIONS
+
+Implement notification support where browser/platform permissions allow.
+
+Each block has:
+
+- Start time
+- Topic
+- Reminder
+
+Notification example:
+
+> NTI — Python for Security  
+> Start your current topic.
+
+Not:
+
+> 90-minute countdown
+
+The goal is topic completion.
+
+Support:
+
+- Notification permission state
+- Quiet hours
+- Morning summary
+- Evening review
+- Task reminders
+
+---
+
+# 48. ALARM
+
+Create an in-app alarm experience.
+
+Actions:
+
+- Start
+- Snooze
+- Skip
+
+Sound where browser permissions allow.
+
+If full-screen alarm behavior is not possible in a browser, provide the closest reliable implementation.
+
+Do not claim native alarm reliability if the browser cannot guarantee it.
+
+---
+
+# 49. CALENDAR EXPORT
+
+Provide `.ics` export.
+
+Include:
+
+- Study blocks
+- Important events
+- VALARM where appropriate
+
+This is a fallback for notification reliability.
+
+---
+
+# 50. LOCAL DATA
+
+Prioritize local-first architecture.
+
+Persist:
+
+- Tasks
+- Courses
+- Topics
+- Progress
+- Notes
+- Habits
+- Workout logs
+- Reading progress
+- PDF metadata
+- PDF annotations
+- Settings
+- Language
+- Theme
+- Roadmap data
+
+Use IndexedDB where data is large.
+
+Use localStorage for small preferences.
+
+---
+
+# 51. OFFLINE
+
+The application should remain usable offline for:
+
+- Today
+- Week
+- Roadmap
+- Tasks
+- Notes
+- Habits
+- Workout
+- Reading metadata
+- Previously cached content
+
+AI features can gracefully show:
+
+> AI unavailable offline.
+
+Do not break the rest of the app.
+
+---
+
+# 52. DATA IMPORT / EXPORT
+
+Allow users to export their application data.
+
+Prefer:
+
+**JSON backup**
+
+Include:
+
+- Courses
+- Topics
+- Tasks
+- Progress
+- Habits
+- Notes
+- Reading
+- Settings
+
+Allow importing the JSON backup.
+
+This protects the user's data.
+
+---
+
+# 53. FIRST LAUNCH
+
+On first launch show:
+
+## Welcome to Masar OS
+
+Then setup:
+
+1. Language
+2. Theme
+3. Wake time
+4. Sleep target
+5. Study days
+6. Current NTI course
+7. Current Extra course
+8. Current Activity
+9. First book
+10. Notification permission
+
+Do NOT overwhelm the user.
+
+Use a progressive onboarding flow.
+
+---
+
+# 54. FIRST-DAY EXPERIENCE
+
+After onboarding:
+
+Show:
+
+**Mission Control**
+
+with:
+
+- Today's date
+- Current mission
+- Today's tasks
+- Sleep status
+- Workout
+- Study progress
+
+The user should immediately understand:
+
+> What do I do now?
+
+---
+
+# 55. EMPTY STATES
+
+Every empty section needs a useful empty state.
+
+Example:
+
+> No English course yet.
+
+Button:
+
+**Add English Course**
+
+Do not show broken blank screens.
+
+---
+
+# 56. SEARCH
+
+Global search should search:
+
+- Courses
+- Topics
+- Tasks
+- Notes
+- Books
+- Research
+- PDFs
+- Highlights
+- Workout notes
+- Mind reflections
+
+---
+
+# 57. SETTINGS
+
+Settings:
+
+### Appearance
+
+- Dark
+- Light
+- System
+
+### Language
+
+- Arabic
+- English
+
+### Notifications
+
+- Permission
+- Quiet hours
+- Reminder settings
+
+### Planning
+
+- Study priorities
+- Block durations
+- Sleep target
+- Wake time
+
+### Data
+
+- Export
+- Import
+- Clear data
+
+### About
+
+- Masar OS
+- Version
+- Credits
+
+---
+
+# 58. ACCESSIBILITY
+
+Support:
+
+- Keyboard navigation
+- Screen-reader labels
+- Adequate contrast
+- Focus states
+- Reduced motion
+- Large touch targets
+
+---
+
+# 59. PERFORMANCE
+
+Optimize for mobile.
+
+Avoid:
+
+- Huge bundles
+- Unnecessary re-renders
+- Large initial payloads
+- Heavy animations
+
+Roadmap must remain performant with 200+ nodes.
+
+Use virtualization/collapse where needed.
+
+---
+
+# 60. ERROR HANDLING
+
+Every major feature needs:
+
+- Loading state
+- Empty state
+- Error state
+- Retry
+- Useful error message
+
+Never expose raw stack traces to users.
+
+---
+
+# 61. SECURITY
+
+Do not hard-code:
+
+- API keys
+- Secrets
+- Tokens
+
+If Gemini API is used:
+
+Use appropriate environment variables/server-side handling.
+
+Never put private API keys directly into client-side source code.
+
+---
+
+# 62. GEMINI INTEGRATION
+
+Where appropriate, use Gemini for:
+
+- Weekly review
+- Topic parsing
+- Quiz generation
+- Feynman feedback
+- Learning analysis
+- Roadmap generation
+- Reflection recommendation
+- Study planning suggestions
+
+AI output should be structured JSON whenever possible.
+
+Validate AI responses before using them.
+
+If Gemini is unavailable:
+
+The app must continue functioning.
+
+---
+
+# 63. BULK COURSE IMPORT
+
+Allow the user to paste a course outline.
+
+Example:
+
+```text
+Module 1
+Topic 1
+Topic 2
+Topic 3
+
+Module 2
+Topic 1
+Topic 2
+```
+
+Gemini should convert it into structured:
+
+Queue → Course → Topic → Item
+
+Show a preview before saving.
+
+Allow editing before confirmation.
+
+---
+
+# 64. AUTOMATIC PACING
+
+Calculate:
+
+- Topics remaining
+- Available study days
+- Topics/day
+- Estimated completion
+- Deadline
+- Current pace
+
+Exclude:
+
+- Travel days
+- Off days
+
+Use Catch-up days intelligently.
+
+Do not blindly force equal topics/day.
+
+Prefer duration-weighted distribution.
+
+Do not split topics unless necessary.
+
+---
+
+# 65. CURRENT / NEXT / LATER
+
+Every queue should clearly show:
+
+### CURRENT
+
+What I am working on.
+
+### NEXT
+
+What comes after.
+
+### LATER
+
+Future items.
+
+This prevents the user from feeling overwhelmed by the entire roadmap.
+
+---
+
+# 66. VISUAL STATUS SYSTEM
+
+Use consistent states:
+
+**Completed**
+- Green-ish success indication
+- Glow
+
+**Current**
+- Cyan/violet pulse
+
+**Upcoming**
+- Dim
+
+**Delayed**
+- Warning
+
+**Locked**
+- Faded
+
+Do not overuse color.
+
+The design should remain elegant.
+
+---
+
+# 67. MICRO-INTERACTIONS
+
+Examples:
+
+Completing a task:
+
+- Checkbox animation
+- Progress ring updates
+- Small haptic feedback if supported
+- Toast
+
+Completing a topic:
+
+- Roadmap node updates
+- Course progress changes
+- Today's completion changes
+- Analytics update
+
+Completing workout:
+
+- Habit automatically updates
+
+Completing reading:
+
+- Reading progress updates
+
+Everything should feel connected.
+
+---
+
+# 68. CROSS-FEATURE INTELLIGENCE
+
+Masar OS should behave like one system.
+
+Examples:
+
+If sleep was poor:
+
+> “Your sleep was below target. Consider reducing today's optional workload.”
+
+If NTI is behind:
+
+> “NTI is currently behind schedule. Extra workload may be reduced.”
+
+If the user has completed many passive learning tasks:
+
+> “You have studied several topics but have low recall activity.”
+
+If workout is missed:
+
+> “Workout moved to the next available appropriate day.”
+
+Never punish the user.
+
+The goal is adaptation.
+
+---
+
+# 69. WEEKLY REVIEW
+
+Every Thursday:
+
+1. Review completed topics
+2. Review skipped topics
+3. Review delayed topics
+4. Review sleep
+5. Review workouts
+6. Review habits
+7. Review reading
+8. Review English
+9. Review activity
+10. Generate next-week plan
+
+---
+
+# 70. USER EXPERIENCE PRINCIPLE
+
+The app should answer three questions immediately:
+
+### What should I do now?
+
+### What should I do next?
+
+### Am I on track?
+
+If the user cannot answer those questions from the Today screen, improve the UI.
+
+---
+
+# 71. DESIGN THE UI YOURSELF
+
+You are explicitly allowed to make design decisions.
+
+Use strong product design judgment.
+
+Create:
+
+- Beautiful cards
+- Intelligent hierarchy
+- Compact mobile layouts
+- Expandable sections
+- Bottom sheets
+- Interactive progress
+- Timeline elements
+- Mission cards
+- Status indicators
+- Roadmap visualization
+
+Do NOT create a boring CRUD dashboard.
+
+Make it feel like a premium personal operating system.
+
+---
+
+# 72. ICON DESIGN
+
+Create an original Masar OS icon.
+
+Concept:
+
+An abstract geometric path forming an “M”.
+
+The path should suggest:
+
+- Direction
+- Progress
+- Navigation
+- Learning journey
+
+Style:
+
+- Minimal
+- Geometric
+- Premium
+- Modern
+- Recognizable at 16–64px
+- Near-black background
+- Cyan/violet accent
+- No rocket
+- No book
+- No brain
+- No graduation cap
+
+Use this icon for:
+
+- App favicon
+- PWA icon
+- App manifest
+- Header
+- Splash/loading screen
+
+---
+
+# 73. PWA REQUIREMENTS
+
+Implement:
+
+`manifest.webmanifest`
+
+Include:
+
+- name: Masar OS
+- short_name: Masar
+- start_url
+- display: standalone
+- background_color
+- theme_color
+- icons
+
+Implement service worker.
+
+Cache application shell.
+
+Support installation.
+
+Ensure correct icon paths.
+
+---
+
+# 74. DEPLOYMENT
+
+The final project must be GitHub-ready.
+
+Verify:
+
+```text
+npm install
+npm run build
+```
+
+works.
+
+Do not leave development-only assumptions.
+
+Provide a clear README explaining:
+
+1. How to run locally
+2. How to build
+3. How to publish to GitHub
+4. How to deploy
+5. How to install on Android
+6. How to install on iPhone
+7. How to configure Gemini API
+8. Known browser limitations
+
+If GitHub Pages requires configuration, include it.
+
+---
+
+# 75. CODE QUALITY
+
+Use:
+
+- TypeScript
+- Reusable components
+- Clear folder structure
+- Centralized types
+- Centralized data models
+- Reusable hooks
+- Error boundaries where appropriate
+- Comments for complex logic
+
+Avoid:
+
+- Giant components
+- Duplicated logic
+- Hard-coded data everywhere
+- Magic numbers
+- Fake functionality
+
+---
+
+# 76. PROJECT STRUCTURE
+
+Prefer something similar to:
+
+```text
+src/
+  app/
+  components/
+  features/
+    today/
+    week/
+    roadmap/
+    library/
+    stats/
+    planner/
+    sleep/
+    workout/
+    habits/
+    learning/
+    mind/
+    pdf/
+    reading/
+    research/
+    english/
+  data/
+  hooks/
+  services/
+  utils/
+  types/
+  styles/
+  pwa/
+```
+
+Adapt this structure if a better architecture is appropriate.
+
+---
+
+# 77. TESTING
+
+Before declaring completion:
+
+Test at minimum:
+
+### Mobile
+
+360×800
+
+390×844
+
+430×932
+
+### Desktop
+
+1280px+
+
+Test:
+
+- RTL
+- LTR
+- Dark
+- Light
+- Navigation
+- Task completion
+- Skip
+- Re-plan
+- Week planning
+- Roadmap
+- PDF
+- Notes
+- Habits
+- Workout
+- Reading
+- PWA
+- Offline
+- GitHub production build
+
+Fix overflow.
+
+Fix broken interactions.
+
+Fix console errors.
+
+---
+
+# 78. CRITICAL REQUIREMENT ABOUT IMPLEMENTATION STATUS
+
+Do not tell me:
+
+> “Implemented”
+
+unless it actually exists in the current code.
+
+At the end of development, provide a table:
+
+| Feature | Implemented | Tested | Notes |
+|---|---|---|---|
+
+Clearly distinguish:
+
+- Implemented
+- Partially implemented
+- Not implemented
+- Browser limitation
+- Requires API/configuration
+
+Never hide incomplete work.
+
+---
+
+# 79. DEVELOPMENT ORDER
+
+Build in logical stages.
+
+### Phase 1
+Foundation
+
+- Architecture
+- Theme
+- Language
+- Routing
+- PWA
+- GitHub compatibility
+
+### Phase 2
+Core planner
+
+- Today
+- Week
+- Tasks
+- Queues
+- Planning engine
+
+### Phase 3
+Learning
+
+- NTI
+- Extra
+- Activity
+- Language
+- Learning Engine
+
+### Phase 4
+Roadmap
+
+- Mind map
+- Progress
+- Search
+- Focus
+
+### Phase 5
+Lifestyle
+
+- Sleep
+- Workout
+- Habits
+- Reading
+
+### Phase 6
+Knowledge
+
+- PDFs
+- Research
+- Novels
+- Mind Compass
+
+### Phase 7
+AI
+
+- Gemini
+- Quiz
+- Feynman
+- Weekly review
+- Smart planning
+
+### Phase 8
+Polish
+
+- Animations
+- Accessibility
+- Performance
+- Offline
+- Error handling
+- Testing
+- Deployment
+
+---
+
+# 80. IMPORTANT: DO NOT ASK ME TO REDEFINE THE SPEC
+
+The specification above is the product direction.
+
+If something is ambiguous:
+
+Make a sensible product decision.
+
+Prefer editable settings instead of hard-coded assumptions.
+
+Do not repeatedly stop and ask for confirmation for minor design decisions.
+
+---
+
+# 81. FINAL DELIVERABLE
+
+At the end, provide:
+
+### 1. What was built
+
+### 2. Project architecture
+
+### 3. Main features
+
+### 4. Data model
+
+### 5. How planning works
+
+### 6. How AI works
+
+### 7. How PWA works
+
+### 8. How GitHub publishing works
+
+### 9. How to deploy
+
+### 10. How to install on a phone
+
+### 11. Environment variables
+
+### 12. Known limitations
+
+### 13. Testing results
+
+### 14. Feature status table
+
+### 15. Next recommended improvements
+
+---
+
+# FINAL PRODUCT PRINCIPLE
+
+Masar OS is not just a study planner.
+
+It is:
+
+> **A personal operating system that turns long-term goals into today's actions.**
+
+The user should open the app and immediately understand:
+
+**Where am I?**
+
+**What am I doing now?**
+
+**What comes next?**
+
+**Am I on track?**
+
+**What should I improve?**
+
+Build the product around that philosophy.

@@ -1,0 +1,6 @@
+{
+  "name": "Masar OS",
+  "description": "A personal operating system for learning, discipline, health, knowledge, and progress.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="112" fill="#07090F"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" stroke="#1E293B" stroke-width="4"/>
+  <defs>
+    <linearGradient id="masarGrad" x1="96" y1="384" x2="416" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="55%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="masarSoft" x1="120" y1="360" x2="392" y2="152" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+  <!-- Subtle directional track -->
+  <path d="M112 368L176 160L256 276L336 160L400 132" stroke="url(#masarSoft)" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Abstract geometric M / directional progression path -->
+  <path d="M112 368L176 160L256 276L336 160L396 368" stroke="url(#masarGrad)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Directional forward vector from peak -->
+  <path d="M336 160L404 126" stroke="#06B6D4" stroke-width="22" stroke-linecap="round"/>
+  <!-- Central waypoint & destination node -->
+  <circle cx="256" cy="276" r="16" fill="#07090F" stroke="#38BDF8" stroke-width="10"/>
+  <circle cx="404" cy="126" r="14" fill="#06B6D4"/>
+</svg>
